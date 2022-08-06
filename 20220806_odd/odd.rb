@@ -8,8 +8,24 @@ class Number
     def odd?
         value % 2 == 1
     end
+
+    def even?
+        !odd?
+    end
+
+    def aho
+        if value % 3 == 0
+            puts "さぁぁん!!"
+        else
+            puts value
+        end
+    end
 end
 
 (1..5).to_a.each do |value|
-    puts Number.new(value).odd?
+    num = Number.new(value)
+    puts "-- Number: #{value} --"
+    num.aho
+    # puts "odd?: #{num.odd?}"
+    # puts "even?: #{num.even?}"
 end
