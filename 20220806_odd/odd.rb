@@ -10,6 +10,6 @@ class Number
     end
 end
 
-[1, 2, 3, 4, 5].each do |value|
+(1..5).to_a.each do |value|
     puts Number.new(value).odd?
 end
