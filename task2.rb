@@ -1,52 +1,52 @@
-class Area
-  attr_accessor :width, :hight
+class Shape
+  attr_accessor :width, :height
 
-  def initialize(width, hight)
+  def initialize(width, height)
     @width = width
-    @hight = hight
+    @height = height
   end
   
   #3項演算子=> 条件 ? tureの処理:falseの処理
   def form
-    width == hight ? "正方形" : "長方形"
+    width == height ? "正方形" : "長方形"
   end
 
-  def area_cal
-    @width * @hight
+  def area
+    @width * @height
   end
 
   def excute
-    puts "この#{form}の面積は#{area_cal}です"
+    puts "この#{form}の面積は#{area}です"
   end
 end
 
-# area1 = Area.new(3, 4)
-# puts "面積は #{area1.area_cal}m2です"
+# shape1 = Shape.new(3, 4)
+# puts "面積は #{shape1.shape_cal}m2です"
 
 puts "#{self}"
 puts "#{@width}"
-puts "#{@hight}"
+puts "#{@height}"
 
 width = 1
-hight = 2
+height = 2
 
 puts "横の長さを入力してください"
 width = gets.to_i
 
 puts "縦の長さを入力してください"
-hight = gets.to_i
+height = gets.to_i
 
-area = Area.new(width, hight)
+shape = Shape.new(width, height)
 
 #   puts "横の長さを入力してください"
-#     area2.width = gets.to_i
+#     shape2.width = gets.to_i
 #   puts "縦の長さを入力してください"
-#     area2.hight = gets.to_i
-# puts "面積は　#{area2.area_cal} m2です"
+#     shape2.height = gets.to_i
+# puts "面積は　#{shape2.shape_cal} m2です"
 
-area.excute
+shape.excute
 
-# area3 = Area.new(3,3)
+# shape3 = Shape.new(3,3)
 # puts "-----------------"
 # puts "直接インスタンスに入力した場合"
-# area3.excute
+# shape3.excute
