@@ -1,6 +1,9 @@
 class Shape
   attr_reader :width, :height
 
+  SQUARE_NAME = "正方形"
+  RECTANGLE_NAME = "長方形"
+
   def initialize(width, height)
     @width = width
     @height = height
@@ -8,7 +11,7 @@ class Shape
   
   #3項演算子=> 条件 ? tureの処理:falseの処理
   def form
-    width == height ? "正方形" : "長方形"
+    width == height ? SQUARE_NAME : RECTANGLE_NAME
   end
 
   def area
