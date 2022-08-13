@@ -12,7 +12,7 @@ class Shape
   end
 
   def area
-    @width * @height
+    width * height
   end
 end
 
