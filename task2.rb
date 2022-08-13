@@ -1,16 +1,21 @@
 class Area
   attr_accessor :width, :hight
 
-    def initialize(width, hight)
+  def initialize(width, hight)
     @width = width
     @hight = hight
   end
   
   def input
     puts "横の長さを入力してください"
+    puts "変更前横: #{@width}"
     @width = gets.to_i
-  puts "縦の長さを入力してください"
+    puts "変更後横: #{@width}"
+
+    puts "縦の長さを入力してください"
+    puts "変更前縦: #{@hight}"
     @hight = gets.to_i
+    puts "縦: #{@hight}"
   end
 
   #3項演算子=> 条件 ? tureの処理:falseの処理
@@ -30,16 +35,25 @@ end
 # area1 = Area.new(3, 4)
 # puts "面積は #{area1.area_cal}m2です"
 
-area2 = Area.new(@width, @hight)
+puts "#{self}"
+puts "#{@width}"
+puts "#{@hight}"
+
+width = 1
+hight = 2
+
+area2 = Area.new(width, hight)
+
 #   puts "横の長さを入力してください"
 #     area2.width = gets.to_i
 #   puts "縦の長さを入力してください"
 #     area2.hight = gets.to_i
-  # puts "面積は　#{area2.area_cal} m2です"
-  area2.input
-  area2.excute
+# puts "面積は　#{area2.area_cal} m2です"
 
-area3 = Area.new(3,3)
-puts "-----------------"
-puts "直接インスタンスに入力した場合"
-area3.excute
+area2.input
+area2.excute
+
+# area3 = Area.new(3,3)
+# puts "-----------------"
+# puts "直接インスタンスに入力した場合"
+# area3.excute
