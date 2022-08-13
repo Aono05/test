@@ -28,13 +28,6 @@ end
 # shape1 = Shape.new(3, 4)
 # puts "面積は #{shape1.shape_cal}m2です"
 
-puts "#{self}"
-puts "#{@width}"
-puts "#{@height}"
-
-width = 1
-height = 2
-
 puts "横の長さを入力してください"
 width = gets.to_i
 
@@ -48,8 +41,6 @@ shape = Shape.new(width, height)
 #   puts "縦の長さを入力してください"
 #     shape2.height = gets.to_i
 # puts "面積は　#{shape2.shape_cal} m2です"
-
-puts "private method: #{shape.square?}"
 
 puts "この#{shape.form}の面積は#{shape.area}です"
 
