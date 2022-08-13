@@ -36,7 +36,7 @@ width = gets.to_i
 puts "縦の長さを入力してください"
 hight = gets.to_i
 
-area2 = Area.new(width, hight)
+area = Area.new(width, hight)
 
 #   puts "横の長さを入力してください"
 #     area2.width = gets.to_i
@@ -44,7 +44,7 @@ area2 = Area.new(width, hight)
 #     area2.hight = gets.to_i
 # puts "面積は　#{area2.area_cal} m2です"
 
-area2.excute
+area.excute
 
 # area3 = Area.new(3,3)
 # puts "-----------------"
