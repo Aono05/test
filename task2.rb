@@ -11,11 +11,17 @@ class Shape
   
   #3項演算子=> 条件 ? tureの処理:falseの処理
   def form
-    width == height ? SQUARE_NAME : RECTANGLE_NAME
+   square? ? SQUARE_NAME : RECTANGLE_NAME
   end
 
   def area
     width * height
+  end
+
+  private
+
+  def square?
+    width == height
   end
 end
 
@@ -42,6 +48,8 @@ shape = Shape.new(width, height)
 #   puts "縦の長さを入力してください"
 #     shape2.height = gets.to_i
 # puts "面積は　#{shape2.shape_cal} m2です"
+
+puts "private method: #{shape.square?}"
 
 puts "この#{shape.form}の面積は#{shape.area}です"
 
