@@ -6,18 +6,6 @@ class Area
     @hight = hight
   end
   
-  def input
-    puts "横の長さを入力してください"
-    puts "変更前横: #{@width}"
-    @width = gets.to_i
-    puts "変更後横: #{@width}"
-
-    puts "縦の長さを入力してください"
-    puts "変更前縦: #{@hight}"
-    @hight = gets.to_i
-    puts "縦: #{@hight}"
-  end
-
   #3項演算子=> 条件 ? tureの処理:falseの処理
   def form
     width == hight ? "正方形" : "長方形"
@@ -42,6 +30,12 @@ puts "#{@hight}"
 width = 1
 hight = 2
 
+puts "横の長さを入力してください"
+width = gets.to_i
+
+puts "縦の長さを入力してください"
+hight = gets.to_i
+
 area2 = Area.new(width, hight)
 
 #   puts "横の長さを入力してください"
@@ -50,7 +44,6 @@ area2 = Area.new(width, hight)
 #     area2.hight = gets.to_i
 # puts "面積は　#{area2.area_cal} m2です"
 
-area2.input
 area2.excute
 
 # area3 = Area.new(3,3)
