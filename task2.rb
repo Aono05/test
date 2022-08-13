@@ -14,10 +14,6 @@ class Shape
   def area
     @width * @height
   end
-
-  def excute
-    puts "この#{form}の面積は#{area}です"
-  end
 end
 
 # shape1 = Shape.new(3, 4)
@@ -44,7 +40,7 @@ shape = Shape.new(width, height)
 #     shape2.height = gets.to_i
 # puts "面積は　#{shape2.shape_cal} m2です"
 
-shape.excute
+puts "この#{shape.form}の面積は#{shape.area}です"
 
 # shape3 = Shape.new(3,3)
 # puts "-----------------"
