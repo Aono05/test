@@ -1,33 +1,43 @@
 class LengthConversion
-  attr_reader :length, :from, :to
+  attr_reader :length, :from_unit, :to_unit
 
   UNITS = {
-    m: 1.0,
-    ft: 3.28,
-    in: 39.37
+    meter: 1.0,
+    feet: 3.28,
+    inch: 39.37
   }
 
-  #task_conversion.rb:6:in `initialize': wrong number of arguments (given 2, expected 3) (ArgumentError)
-  def initialize(length, from:, to:)
+  def initialize(length, from_unit:, to_unit:)
      @length = length
-     @from = from
-     @to = to
+     @from_unit = from_unit
+     @to_unit = to_unit
   end
 
-  def convert(length, from, to)
-    # (length / UNITS[:from]*UNITS[:to]).round(2)
+  def convert
+    from = UNITS[from_unit.to_sym]
+    to = UNITS[to_unit.to_sym]
+
+    if from == nil
+      p "変換元単位が存在しません"
+      return
+    end
+
+    if to == nil
+      p "変換後単位が存在しません"
+      return
+    end
+
+    puts "from: #{from}"
+    puts "to: #{to}"
+
     (length / from*to).round(2)
   end
 end
 
 test_length = LengthConversion.new(
   1,
-  from: LengthConversion::UNITS[:m],
-  to: LengthConversion::UNITS[:in]
+  from_unit: "meter",
+  to_unit: "feet"
 )
 
-p test_length.convert(
-  1,
-  LengthConversion::UNITS[:m],
-  LengthConversion::UNITS[:in]
-)
+p test_length.convert
