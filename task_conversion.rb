@@ -1,6 +1,6 @@
 class Length_conversion
   UNITS = {m: 1.0, ft: 3.28, in: 39.37}
-  attr_reader :length, :from, :in
+  attr_reader :length, :from, :to
 
 #task_conversion.rb:6:in `initialize': wrong number of arguments (given 2, expected 3) (ArgumentError)
   def initialize(length, from, to)
