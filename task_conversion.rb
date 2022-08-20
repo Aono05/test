@@ -8,14 +8,15 @@ class LengthConversion
   }
 
   #task_conversion.rb:6:in `initialize': wrong number of arguments (given 2, expected 3) (ArgumentError)
-  def initialize(length, from, to)
+  def initialize(length, from:, to:)
      @length = length
      @from = from
      @to = to
   end
 
-  def convert(length, from: :m, to: :m)
-    (length / UNITS[from]*UNITS[to]).round(2)
+  def convert(length, from, to)
+    # (length / UNITS[:from]*UNITS[:to]).round(2)
+    (length / from*to).round(2)
   end
 end
 
@@ -25,4 +26,8 @@ test_length = LengthConversion.new(
   to: LengthConversion::UNITS[:in]
 )
 
-p test_length.convert
+p test_length.convert(
+  1,
+  LengthConversion::UNITS[:m],
+  LengthConversion::UNITS[:in]
+)
