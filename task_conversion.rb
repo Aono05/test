@@ -1,8 +1,13 @@
-class Length_conversion
-  UNITS = {m: 1.0, ft: 3.28, in: 39.37}
+class LengthConversion
   attr_reader :length, :from, :to
 
-#task_conversion.rb:6:in `initialize': wrong number of arguments (given 2, expected 3) (ArgumentError)
+  UNITS = {
+    m: 1.0,
+    ft: 3.28,
+    in: 39.37
+  }
+
+  #task_conversion.rb:6:in `initialize': wrong number of arguments (given 2, expected 3) (ArgumentError)
   def initialize(length, from, to)
      @length = length
      @from = from
@@ -14,5 +19,10 @@ class Length_conversion
   end
 end
 
-test_length = Length_conversion.new(1, from: :m, to: :in)
+test_length = LengthConversion.new(
+  1,
+  from: LengthConversion::UNITS[:m],
+  to: LengthConversion::UNITS[:in]
+)
+
 p test_length.convert
