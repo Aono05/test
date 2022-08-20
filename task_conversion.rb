@@ -1,10 +1,14 @@
 class LengthConversion
   attr_reader :length, :from_unit, :to_unit
 
-  UNITS = {
-    meter: 1.0,
-    feet: 3.28,
-    inch: 39.37
+  UNITS_METER = :meter
+  UNITS_FEET = :feet
+  UNITS_INCH = :inch
+
+  UNITS_LENGTH = {
+    UNITS_METER => 1.0,
+    UNITS_FEET => 3.28,
+    UNITS_INCH => 39.37
   }
 
   def initialize(length, from_unit:, to_unit:)
@@ -14,16 +18,16 @@ class LengthConversion
   end
 
   def convert
-    from = UNITS[from_unit.to_sym]
-    to = UNITS[to_unit.to_sym]
+    from = UNITS_LENGTH[from_unit]
+    to = UNITS_LENGTH[to_unit]
 
     if from == nil
-      p "変換元単位が存在しません"
+      p "Error: 変換元単位が存在しません。from_unit: #{from_unit}"
       return
     end
 
     if to == nil
-      p "変換後単位が存在しません"
+      p "Error: 変換後単位が存在しません。to_unit: #{to_unit}"
       return
     end
 
@@ -36,8 +40,8 @@ end
 
 test_length = LengthConversion.new(
   1,
-  from_unit: "meter",
-  to_unit: "feet"
+  from_unit: LengthConversion::UNITS_METER,
+  to_unit: LengthConversion::UNITS_FEET
 )
 
 p test_length.convert
