@@ -1,4 +1,4 @@
-class LengthConversion
+class LengthConverter
   attr_reader :length, :from_unit, :to_unit
 
   UNITS_METER = :meter
@@ -38,10 +38,12 @@ class LengthConversion
   end
 end
 
-test_length = LengthConversion.new(
+length_converter = LengthConverter.new(
   1,
-  from_unit: LengthConversion::UNITS_METER,
-  to_unit: LengthConversion::UNITS_FEET
+  from_unit: LengthConverter::UNITS_METER,
+  to_unit: LengthConverter::UNITS_FEET
 )
 
-p test_length.convert
+converted_length = length_converter.convert
+
+p converted_length
