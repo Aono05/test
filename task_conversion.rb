@@ -11,7 +11,7 @@ class LengthConverter
     UNITS_INCH => 39.37
   }
 
-  def initialize(length, from_unit:, to_unit:)
+  def initialize(length:, from_unit:, to_unit:)
      @length = length
      @from_unit = from_unit
      @to_unit = to_unit
@@ -39,7 +39,7 @@ class LengthConverter
 end
 
 length_converter = LengthConverter.new(
-  1,
+  length: 1,
   from_unit: LengthConverter::UNITS_METER,
   to_unit: LengthConverter::UNITS_FEET
 )
