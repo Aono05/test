@@ -6,15 +6,15 @@ class Bmi
   end
 
   def calculation
-    user_input_weight / user_input_height**2
+    (user_input_weight / user_input_height**2).round(2)
   end
 end
 
 puts "体重を入力してください" 
-user_input_weight = gets.chomp
+user_input_weight = gets.chomp.to_i
 
 puts "身長を入力してください"
-user_input_height = gets.chomp
+user_input_height = gets.chomp.to_i
 
-test = Bmi.new
+test = Bmi.new(user_input_weight, user_input_height)
 puts test.calculation
