@@ -6,8 +6,8 @@ require_relative "./check"
 puts "名前を入力してください。"
 input_name = gets.chomp
 
-puts "身長を入力してください。"
-input_height = gets.chomp.to_f
+input_height = 0
+check = Check.new(0).check
 
 puts "体重を入力してください。"
 input_weight = gets.chomp.to_f
