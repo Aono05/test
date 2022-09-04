@@ -8,11 +8,16 @@ class BMI
     BMI_STATUS_TEXT_FAT = "肥満"
 
     def initialize(height, weight)
+        # puts "debug initialize height: #{height}"
+
         @height = height
         @weight = weight
     end
 
     def value
+         puts "debug weight: #{weight}"
+        # puts "debug height: #{height}"
+
        @_value ||= (weight.to_f / (height.to_f/100)**2).round(2)
     end
 
